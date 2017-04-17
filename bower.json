@@ -1,0 +1,13 @@
+{
+  "name": "basenodets",
+  "description": "base nodejs with typescript",
+  "main": "startup.js",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "authors": [
+    "Killpippo"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/fisolima/BaseNodeTs"
+}
