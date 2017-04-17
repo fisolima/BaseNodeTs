@@ -5,3 +5,7 @@ npm install -g gulp-cli
 npm install -g typescript
 npm install -g typings
 npm install -g bower
+
+npm install
+typings install
+bower install
