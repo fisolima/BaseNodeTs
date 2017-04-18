@@ -21,6 +21,12 @@ gulp.task("client:copy_html", function () {
         .pipe(gulp.dest("dist/public"));
 });
 
+gulp.task("client:compile", function () {
+    return tsClientProject.src()
+            .pipe(tsClientProject())
+            .js.pipe(gulp.dest("dist/public/js"));
+});
+
 gulp.task("client:dev:copy_libs", function () {
     return gulp.src(bowerFiles.ext('js').files)
         .pipe(gulp.dest("dist/public/libs"));
@@ -32,7 +38,7 @@ gulp.task("client:dev:copy_styles", function () {
 });
 
 gulp.task("client:dev:inject", function () {
-    var sources = gulp.src(["./dist/public/libs/**/*.js", "./dist/public/css/**/*.css"], {read: false});
+    var sources = gulp.src(["./dist/public/libs/**/*.js", "./dist/public/js/**/*.js", "./dist/public/css/**/*.css"], {read: false});
 
     return gulp.src("./dist/public/index.html")
         .pipe(gulpInject(sources, {relative: true}))
@@ -58,12 +64,9 @@ gulp.task("client:dev:build", function (done) {
         "client:dev:copy_libs",
         "client:dev:copy_styles",
         "client:copy_html",
-        "client:dev:inject",
+        "client:compile",
+        "client:dev:inject",        
         function () {
-            tsClientProject.src()
-                .pipe(tsClientProject())
-                .js.pipe(gulp.dest("dist/public/js"));
-
             done();
         }
     );

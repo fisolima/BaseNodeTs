@@ -1,6 +1,7 @@
 /// <reference path="../../../typings/index.d.ts" />
 
 import * as express from 'express';
+import * as path from 'path';
 import * as base from './baseController';
 
 export class HomeController extends base.BaseController {    
@@ -11,6 +12,6 @@ export class HomeController extends base.BaseController {
     }
 
     private Index(req: express.Request, res: express.Response, next: express.NextFunction) {
-        res.end('Hello Killpippo');
+        res.sendFile(path.join(__dirname,'../public','index.html'));
     }
 }
