@@ -1,7 +1,7 @@
 {
   "name": "basenodets",
   "description": "base nodejs with typescript",
-  "main": "startup.js",
+  "main": "dist/server/startup.js",
   "dependencies": {
     "jquery": "^3.2.1",
     "material-design-lite": "^1.3.0"

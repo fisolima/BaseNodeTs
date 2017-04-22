@@ -4,6 +4,7 @@ var del = require("del");
 var bowerFiles = require('bower-files')();
 var gulpInject = require('gulp-inject');
 var ts = require("gulp-typescript");
+var sourcemaps = require("gulp-sourcemaps");
 
 var tsServerProject = ts.createProject("src/server/tsconfig.json");
 var tsClientProject = ts.createProject("src/client/tsconfig.json");
@@ -21,10 +22,13 @@ gulp.task("client:copy_html", function () {
         .pipe(gulp.dest("dist/public"));
 });
 
-gulp.task("client:compile", function () {
+gulp.task("client:dev:compile", function () {
     return tsClientProject.src()
+            .pipe(sourcemaps.init())
             .pipe(tsClientProject())
-            .js.pipe(gulp.dest("dist/public/js"));
+            .js
+            .pipe(sourcemaps.write("."))
+            .pipe(gulp.dest("dist/public/js"));
 });
 
 gulp.task("client:dev:copy_libs", function () {
@@ -45,14 +49,20 @@ gulp.task("client:dev:inject", function () {
         .pipe(gulp.dest("./dist/public"));
 });
 
-gulp.task("server:build", function (done) {
+gulp.task("server:dev:compile", function() {
+    return tsServerProject.src()
+                .pipe(sourcemaps.init())
+                .pipe(tsServerProject())
+                .js
+                .pipe(sourcemaps.write("."))
+                .pipe(gulp.dest("dist/server"));
+});
+
+gulp.task("server:dev:build", function (done) {
     runSequence(
         "server:clean",
+        "server:dev:compile",
         function() {
-            tsServerProject.src()
-                .pipe(tsServerProject())
-                .js.pipe(gulp.dest("dist/server"));
-
             done();
         }
     );
@@ -64,7 +74,7 @@ gulp.task("client:dev:build", function (done) {
         "client:dev:copy_libs",
         "client:dev:copy_styles",
         "client:copy_html",
-        "client:compile",
+        "client:dev:compile",
         "client:dev:inject",        
         function () {
             done();

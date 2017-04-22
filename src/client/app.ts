@@ -1,9 +1,7 @@
 /// <reference path="../../typings/index.d.ts" />
 
-//import * as express from 'express';
-
 class App {
-    constructor() {
+    constructor(/* your injections here */) {
     }
 
     public Start() {
@@ -11,7 +9,7 @@ class App {
 
         let div = document.createElement("div");
 
-        div.innerHTML = 'Killpippo2';
+        div.innerHTML = 'Killpippo';
 
         document.body.appendChild(div);
     }

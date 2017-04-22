@@ -2,7 +2,7 @@
   "name": "basenodets",
   "version": "1.0.0",
   "description": "base nodejs with typescript",
-  "main": "startup.js",
+  "main": "dist/server/startup.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-inject": "^4.2.0",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-typescript": "^3.1.6",
     "run-sequence": "^1.2.2",
     "typescript": "^2.2.2"

@@ -10,6 +10,7 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "alwaysStrict": true
+        "alwaysStrict": true,
+        "outDir": "dist/server"
     }
 }

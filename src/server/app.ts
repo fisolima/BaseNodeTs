@@ -8,7 +8,7 @@ import * as about from './controllers/aboutController';
 export class App {
     app: express.Application;
 
-    constructor() {
+    constructor(/* your injections here */) {
         this.app = express();
 
         this.RouteConfig();
