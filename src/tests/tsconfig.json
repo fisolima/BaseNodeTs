@@ -1,0 +1,16 @@
+{
+    "files": [
+        "./**/*.ts",
+        "../shared/**/*.ts"
+    ],
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "alwaysStrict": true,
+        "outDir": "dist/test"
+    }
+}

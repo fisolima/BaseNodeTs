@@ -14,12 +14,22 @@
   },
   "devDependencies": {
     "bower-files": "^3.14.1",
+    "chai": "^3.5.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
     "gulp-inject": "^4.2.0",
+    "gulp-mocha": "^4.3.0",
     "gulp-sourcemaps": "^2.6.0",
+    "gulp-strip-debug": "^1.1.0",
     "gulp-typescript": "^3.1.6",
+    "gulp-uglify": "^2.1.2",
+    "mocha": "^3.2.0",
     "run-sequence": "^1.2.2",
-    "typescript": "^2.2.2"
+    "should": "^11.2.1",
+    "sinon": "^2.1.0",
+    "typescript": "^2.2.2",
+    "typings": "^2.1.1"
   }
 }
