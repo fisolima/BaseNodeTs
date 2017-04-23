@@ -34,10 +34,10 @@ The following gulp comma
 	Generate in *dist* folder both server and client development files
 * **test**
 	Execute all tests
-* **client:prod:build --build_version version **
+* **client:prod:build --build_version *version***
 	Generate in *dist/public* folder distributable files. *version* value must be provided
-* **server:prod:build --build_version version **
+* **server:prod:build --build_version *version***
 	Generate in *dist/server* folder client and server distributable files. *version* value must be provided
-* **prod:build --build_version version **
+* **prod:build --build_version *version***
 	Generate in *dist* folder client and server distributable files. *version* value must be provided
 
